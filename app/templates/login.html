@@ -1,20 +1,36 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <main>
+<main class="container login-container">
     <h1>Sign In</h1>
-    <form action="" method="post" novalidate>
+
+    <form action="" method="post" novalidate class="login-form">
         {{ form.hidden_tag() }}
-        <p>
-            {{ form.username.label }}<br>
-            {{ form.username(size=32) }}
-        </p>
-        <p>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}
-        </p>
-        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        <p>{{ form.submit() }}</p>
+
+        <div class="form-group">
+            {{ form.username.label }}
+            {{ form.username(class="form-input") }}
+            {% for error in form.username.errors %}
+            <span style="color: red">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            {{ form.password.label }}
+            {{ form.password(class="form-input") }}
+            {% for error in form.username.errors %}
+            <span style="color: red">[{{ error }}]</span>
+            {% endfor %}
+        </div>
+
+        <div class="form-group checkbox-group">
+            {{ form.remember_me() }}
+            {{ form.remember_me.label }}
+        </div>
+
+        <div class="form-group">
+            {{ form.submit(class="button primary full-width") }}
+        </div>
     </form>
-    </main>
+</main>
 {% endblock %}
