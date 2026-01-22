@@ -1,0 +1,1 @@
+FLASK_APP=job_application_tracker.py
