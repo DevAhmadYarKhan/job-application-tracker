@@ -10,8 +10,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navbar-links">
+            <a href="{{ url_for('index') }}" class="button secondary">Home</a>
+            <a href="{{ url_for('applications') }}" class="button secondary">Applications</a>
+            {% if current_user.is_anonymous %}
+            <a href="{{ url_for('register') }}" class="button primary">Register</a>
+            <a href="{{ url_for('login') }}" class="button primary">Login</a>
+            {% else %}
+            <a href="{{ url_for('logout') }}" class="button primary">Logout</a>
+            {% endif %}
+        </div>
+    </nav>
 
-    {% block content %}{% endblock %}
+    <main class="page-content">
+        {% block content %}{% endblock %}
+    </main>
     
 </body>
 </html>

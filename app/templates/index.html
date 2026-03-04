@@ -1,16 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <main class="container">
-        <h1>Job Application Tracker</h1>
+<section class="container home-intro">
+    <h1>Track Every Application in One Place</h1>
+    <p class="subtitle">
+        Job Application Tracker helps you organize applications, monitor deadlines,
+        and keep your job search clear and structured.
+    </p>
 
-        <p class="subtitle">
-            Keep track of every job you apply to — all in one place.
+    <div class="home-section">
+        <h2>What It Does</h2>
+        <p>
+            The website is designed to store your job applications in one place so
+            you can quickly see where you have applied, what stage each application
+            is in, and which deadlines are coming up.
         </p>
+    </div>
 
-        <div class="actions">
-            <a href="/register" class="button primary">Sign Up</a>
-            <a href="/login" class="button secondary">Log In</a>
-        </div>
-    </main>
+    <div class="home-section">
+        <h2>How It Works</h2>
+        <p>
+            You create and manage application entries, then update them as your
+            progress changes. Instead of tracking everything manually, the platform
+            is intended to give you a single overview of your search.
+        </p>
+    </div>
+
+    <div class="home-section">
+        <h2>Why Use It</h2>
+        <p>
+            Keeping application details organized can reduce missed deadlines,
+            repeated effort, and confusion during a busy job hunt. This tracker is
+            meant to make that process simpler and easier to manage.
+        </p>
+    </div>
+</section>
 {% endblock %}

@@ -23,11 +23,23 @@ body {
     background-color: #f4f6f8;
     color: #333;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-    /* Center main content vertically & horizontally */
+/* ============================================================
+   SHARED PAGE LAYOUT
+   ------------------------------------------------------------
+   Shared structural layout for navigation and page content.
+   ============================================================ */
+
+.page-content {
+    flex: 1;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2rem 1rem;
 }
 
 /* ============================================================
@@ -38,6 +50,20 @@ body {
    - index.html (landing page)
    - future pages like dashboard, forms, etc.
    ============================================================ */
+
+.navbar {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    display: flex;
+    background-color: #ffffff;
+    border-bottom: 1px solid #d1d5db;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-links {
+    display: flex;
+    gap: 0.75rem;
+}
 
 .container {
     background-color: #ffffff;
@@ -64,6 +90,28 @@ h1 {
     margin-bottom: 2rem;
     font-size: 1rem;
     color: #666;
+}
+
+/* ============================================================
+   SHARED FEEDBACK STYLES
+   ------------------------------------------------------------
+   Reusable feedback styles for flashed status and error messages.
+   ============================================================ */
+
+.flashes {
+    margin-bottom: 1.25rem;
+}
+
+.flash-message + .flash-message {
+    margin-top: 0.5rem;
+}
+
+.flash-message.flash-error {
+    color: red;
+}
+
+.flash-message.flash-success {
+    color: #15803d;
 }
 
 /* ============================================================
@@ -108,14 +156,34 @@ h1 {
    PAGE-SPECIFIC STYLES
    ------------------------------------------------------------
    index.html (Landing Page)
-   ------------------------------------------------------------
-   NOTE:
-   Currently, index.html ONLY uses shared styles.
-   This section exists for future landing-page-only styles.
    ============================================================ */
 
-/* (No index.html–specific styles yet) */
+.home-intro {
+    max-width: 720px;
+    text-align: left;
+}
 
+.home-intro h1 {
+    text-align: center;
+}
+
+.home-intro .subtitle {
+    text-align: center;
+}
+
+.home-section + .home-section {
+    margin-top: 1.5rem;
+}
+
+.home-section h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.home-section p {
+    line-height: 1.6;
+    color: #4b5563;
+}
 
 /* ============================================================
    PAGE-SPECIFIC STYLES
